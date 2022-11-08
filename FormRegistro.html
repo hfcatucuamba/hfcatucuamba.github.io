@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>LOGISTICA</title>
+    <script type="text/javascript" src="recursos/js/validaciones.js"></script>
+  </head>
+  <body>
+    <form action="./Script_PHP/registrar.php" method="POST" name="FormDireccion" target="_blank">
+       <fieldset> <!--agrupa varios elementos del form-->
+         <legend>DIRECCION DE ENVIO</legend>
+         Calle Principal <br>
+         <input type="text" name="txtPrincipal" value="">
+         <br><br>
+         Transversal<br>
+         <input type="text" name="txtTransversal" value="">
+        
+		<br><br>
+		<input type="checkbox" name="chbEntrega1" value="PROPIETARIO" id="check1" onchange="mostrar1()"> Entrega al propietario.<br>
+        <input type="checkbox" name="chbEntrega2" value="TERCERO" id="check2" onchange="mostrar2()"> Entrega a un tercero.
+         
+
+
+         <br><br>
+         Cantones: <select  name="cmbCantones">
+		      <optgroup label="PICHINCHA">
+					<option value="Q">Quito</option>
+					<option value="R">Rumiñahui</option>
+					<option value="M">Mejia</option>
+             </optgroup>
+			 
+			 <optgroup label="GUAYAS">
+					<option value="G">Guayaquil</option>
+					<option value="S">Santa Elena</option>
+					<option value="SL">Salinas</option>
+             </optgroup>
+			 
+         </select>
+		 
+         <br><br>
+
+         <div id="boton" style="display: none;">
+           <input type="submit" name="SubmitDireccion" value="REGISTRAR">
+
+          </div>
+
+       </fieldset>
+    </form>
+	
+	<br>
+  <div id="confidencial" style="display: none;">
+    <form action="./Script_PHP/procesa.php" method="POST" name="FormConfidencial" target="_blank">
+      <br>  
+       <fieldset>
+         <legend>INFORMACIÓN CONFIDENCIAL</legend>
+         Código Postal: 
+         <input type="password" name="pswCodigoPostal" value="">
+         
+		 <br><br>
+         Referencia de la Dirección:<br>
+         <textarea name="Mensaje" rows="3" cols="30" id="Mensaje"></textarea><br>
+         <br>
+           <input type="submit" name="SubmitConfidencial" value="PROCESAR">
+       </fieldset>
+    </form>
+    </div>
+    <br><br>
+    <a href="index.html">Regresar</a>
+    
+  </body>
+</html>
