@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>CSS DOM</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
+  <meta property="og:title" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
+
+  <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="">
+
+  <!-- Favicons -->
+  <link href="../img/numero6.ico" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Imperial - v5.9.1
+  * Template URL: https://bootstrapmade.com/imperial-free-onepage-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo mr-auto"><img src="../img/titulo.png" alt=""></a>
+      <!-- Uncomment below if you prefer to use a text logo -->
+      <!-- <h1 class="logo mr-auto"><a href="index.html">Imperial</a></h1> -->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="index.html#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#estilo">Cambio estilos</a></li>
+          <li><a class="nav-link scrollto " href="#eventos">Eventos</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>CSS DOM</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= About Section ======= -->
+    <section id="estilo">
+      <h1 class="text-center">JavaScript HTML DOM - Cambio de CSS</h1>
+      <div class="container about-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="row">
+          <h2 class="titulo">Cambio de estilo HTML</h2>
+          <p>Para cambiar el estilo de un elemento HTML, use esta sintaxis: document.getElementById(id).style.property = nuevo estilo</p> 
+          <div class="col-md-6 about-content">
+            <h2 class="titulo">Código</h2>
+            <code>
+              &lt;!DOCTYPE html&gt;
+              <br>
+                &lt;html&gt;
+                <br>
+                &lt;body&gt;
+                <br>
+                &lt;h2&gt;JavaScript HTML DOM&lt;/h2&gt;
+                <br>
+                &lt;p&gt;Cambiar el estilo HTML:&lt;/p&gt;
+                <br>
+                &lt;p id="p1"&gt;Hello World!&lt;/p&gt;
+                <br>
+                &lt;p id="p2"&gt;Hello World!&lt;/p&gt;
+                <br>
+                &lt;script&gt;document.getElementById("p2").style.color = "blue";
+                document.getElementById("p2").style.fontFamily = "Arial";
+                document.getElementById("p2").style.fontSize = "larger";
+                &lt;/script&gt;
+                <br>
+                &lt;/body&gt;
+                <br>
+                &lt;/html&gt;
+            </code>
+
+          </div>
+          <div class="col-lg-6 about-img" data-aos="fade-right" data-aos-delay="400">
+            <h2 class="titulo">Ejecucion</h2>
+            <h4>JavaScript HTML DOM</h4>
+            <p>Cambiar el estilo HTML:</p>
+            <p id="p1">Hello World!</p>
+            <p id="p2">Hello World!</p>
+            <p>Click en el botón para cambiar el estilo &lt;p2&gt;</p>
+            <button onclick="myFunction()">Pruebalo</button>
+
+            <script type="text/javascript">
+              function myFunction() {
+                document.getElementById("p2").style.color = "blue";
+                document.getElementById("p2").style.fontFamily = "Arial";
+                document.getElementById("p2").style.fontSize = "larger";
+              }
+            </script>
+            <br><br>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
+
+    <section id="eventos">
+      <div class="container about-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="row">
+          <h2 class="titulo">Uso de eventos</h2>
+          <p class="aboutNosotros-text">El HTML DOM le permite ejecutar código cuando ocurre un evento. Los eventos son generados por el navegador cuando "le suceden cosas" a los elementos HTML:</p>
+          <li>Se hace clic en un elemento</li>
+          <li>La página ha cargado</li>
+          <li>Los campos de entrada se cambian</li><br><br>
+          <p>Este ejemplo cambia el estilo del elemento HTML con id="id1", cuando el usuario hace clic en un botón:</p> 
+          <div class="col-md-6 about-content">
+            <h2 class="titulo">Codigo</h2>
+            <code>
+              &lt;!DOCTYPE html&gt;
+              <br>
+                &lt;html&gt;
+                <br>
+                &lt;body&gt;
+                <br>
+                &lt;h2 id="id1"&gt;Mi título 1&lt;/h2&gt;
+                <br>
+                &lt;button type="button" onclick="document.getElementById('id1').style.color = 'red'"&gt;Pruebalo!&lt;/p&gt;
+                <br>
+                &lt;/body&gt;
+                <br>
+                &lt;/html&gt;
+            </code>
+
+          </div>
+          <div class="col-lg-6 about-img" data-aos="fade-right" data-aos-delay="400">
+            <h2 class="titulo">Ejecución</h2>
+            <h4 id="id1">Mi título 1</h4>
+            <button type="button" 
+            onclick="document.getElementById('id1').style.color = 'red'">
+            Pruebalo!</button>
+            <br><br>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="copyright">
+            &copy; Copyright <strong>Grupo 06</strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+            <!--
+            All the links in the footer should remain intact.
+            You can delete the links only if you purchased the pro version.
+            Licensing information: https://bootstrapmade.com/license/
+            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Imperial
+          -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
