@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Documento DOM</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
+  <meta property="og:title" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
+
+  <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="">
+
+  <!-- Favicons -->
+  <link href="../img/numero6.ico" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Imperial - v5.9.1
+  * Template URL: https://bootstrapmade.com/imperial-free-onepage-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo mr-auto"><img src="../img/titulo.png" alt=""></a>
+      <!-- Uncomment below if you prefer to use a text logo -->
+      <!-- <h1 class="logo mr-auto"><a href="index.html">Imperial</a></h1> -->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="index.html#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#aboutNosotros">Introduccion</a></li>
+          <li><a class="nav-link scrollto" href="#encontrar">Elementos</a></li>
+          <li><a class="nav-link scrollto " href="#about">Método get</a></li>
+          <li><a class="nav-link scrollto " href="#adiccion">Adicción y Eliminación</a></li>
+          <li><a class="nav-link scrollto " href="#objetos">Objetos</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Documentos DOM</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= About Section ======= -->
+    <section id="aboutNosotros">
+      <div class="container about-container" data-aos="fade-up" data-aos-delay="300">
+        <div class="row">
+          <h1 class="text-center">Documentos DOM</h1>
+          <div class="col-sm-12 col-md-12 col-lg-12 about-content">
+            <h2 class="aboutNosotros-title">Documento JavaScript HTML DOM</h2>
+            <p class="aboutNosotros-text">
+              El objeto del documento HTML DOM es el propietario de todos los demás objetos en su página web.
+            </p>
+            <h1 class="aboutNosotros-title">El objeto de documento HTML DOM</h1>
+            <ul>
+              <li>El objeto del documento representa su página web.</li>
+              <li>Si desea acceder a cualquier elemento en una página HTML, siempre comienza accediendo al objeto del documento.</li>
+              <li>A continuación se muestran algunos ejemplos de cómo puede utilizar el objeto de documento para acceder y manipular HTML.</li>
+            </ul>
+          </div>
+        </div>
+        <br><br>
+      </div>
+    </section><!-- End About Section -->
+
+    <section id="encontrar">
+      <div class="container about-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="row">
+          <h2 class="titulo">Encontrar elementos HTML</h2>
+          <div class="col-lg-12 about-content">
+            <table class="table table-striped table-hover text-center" align="content">
+                <tr>
+                  <th class="text-center">Método</th>
+                  <th class="text-center">Descripción</th>
+                </tr>
+                <tr>
+                  <td>cument.getElementById(id)</td>
+                  <td>Busca el elemento HTML con el id.</td>
+                </tr>
+                <tr>
+                  <td>document.getElementsByClassName(class)</td>
+                  <td>Busca elementos con la clase class.</td>
+                </tr>
+                <tr>
+                  <td>document.getElementsByName(name)</td>
+                  <td>Busca elementos con atributo name name.</td>
+                </tr>
+                <tr>
+                  <td>document.getElementsByTagName(tag)</td>
+                  <td>Busca elementos tag.</td>
+                </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
+
+    <section id="about">
+      <div class="container about-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="row">
+          <h2 class="about-title">El método getElementById</h2>
+          <div class="col-lg-12 about-content" data-aos="fade-right" data-aos-delay="400">
+            <table class="table table-striped table-hover text-center" align="content">
+                <tr>
+                  <th class="text-center">Propiedad</th>
+                  <th class="text-center">Descripción</th>
+                </tr>
+                <tr>
+                  <td>document.getElementById(id)</td>
+                  <td>Cambiar el HTML interno de un elemento</td>
+                </tr>
+                <tr>
+                  <td>element.attribute = new value</td>
+                  <td>Cambiar el valor del atributo de un elemento HTML.</td>
+                </tr>
+                <tr>
+                  <td>element.style.property = new style</td>
+                  <td>Cambiar el estilo de un elemento HTML</td>
+                </tr>
+                <tr>
+                  <th class="text-center">Método</th>
+                  <th class="text-center">Descripción</th>
+                </tr>
+                <tr>
+                  <td>element.setAttribute(attribute, value))</td>
+                  <td>Cambiar el valor del atributo de un elemento HTML</td>
+                </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
+
+    <section id="adiccion">
+      <div class="container about-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="row">
+          <h2 class="titulo">Adición y eliminación de elementos</h2>
+          <div class="col-lg-12 about-content">
+            <table class="table table-striped table-hover text-center" align="content">
+                <tr>
+                  <th class="text-center">Método</th>
+                  <th class="text-center">Descripción</th>
+                </tr>
+                <tr>
+                  <td>document.createElement(element)</td>
+                  <td>Crear un elemento HTML</td>
+                </tr>
+                <tr>
+                  <td>document.removeChild(element)</td>
+                  <td>Eliminar un elemento HTML</td>
+                </tr>
+               <tr>
+                  <td>document.appendChild(element)</td>
+                  <td>Agregar un elemento HTML</td>
+                </tr>
+                <tr>
+                  <td>document.replaceChild(new, old)</td>
+                  <td>Reemplazar un elemento HTML</td>
+                </tr>
+                <tr>
+                  <td>document.write(text)</td>
+                  <td>Escribir en el flujo de salida HTML</td>
+                </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
+
+    <section id="objetos">
+      <div class="container about-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="row">
+          <h2 class="titulo">Encontrar objetos HTML</h2>
+            <p class="about-text">El primer HTML DOM Nivel 1 (1998), definió 11 objetos HTML, colecciones de objetos y propiedades. Estos siguen siendo válidos en HTML5.<br>Más tarde, en HTML DOM Nivel 3, se agregaron más objetos, colecciones y propiedades.
+            </p>
+          <div class="col-lg-12 about-content">
+            <table class="table table-striped table-hover text-center" align="content">
+            <tr>
+              <th>Propiedad</th>
+              <th>Descripcion</th>
+              <th>DOM</th>
+            </tr>
+            <tr>
+                <td>document.anchors</td>
+                <td>Devuelve todas las &lt;a&gt; elementos que tienen un atributo de nombre</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>document.applets</td>
+                <td><span class="deprecated">Obsoleta</span></td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>document.baseURI</td>
+                <td>Devuelve el URI base absoluto del documento.</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>document.body</td>
+                <td>Devuelve el &lt;cuerpo&gt; elemento</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>document.cookie</td>
+                <td>Devuelve la cookie del documento.</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>document.doctype</td>
+                <td>Devuelve el tipo de documento del documento.</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>document.documentElement</td>
+                <td>Devuelve el &lt;html&gt; elemento</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>document.documentMode</td>
+                <td>Devuelve el modo utilizado por el navegador.</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>document.documentURI</td>
+                <td>Devuelve la URI del documento</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>document.domain</td>
+                <td>Devuelve el nombre de dominio del servidor de documentos.</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>document.domConfig</td>
+                <td><span class="deprecated">Obsoleto.</span></td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>document.embeds</td>
+                <td>Devuelve todas las &lt;incrustaciones&gt; elementos</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>document.forms</td>
+                <td>Devuelve todos los &lt;formularios&gt; elementos</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>document.head</td>
+                <td>Devuelve la etiqueta &lt;head&gt; elemento</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>document.images</td>
+                <td>Devuelve todas las &lt;img&gt; elementos</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>document.implementation</td>
+                <td>Devuelve la implementación DOM</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>document.inputEncoding</td>
+                <td>Devuelve la codificación del documento (conjunto de caracteres)</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>document.lastModified</td>
+                <td>Devuelve la fecha y hora en que se actualizó el documento.</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>document.links</td>
+                <td>Devuelve todos los &lt;área&gt; y &lt;a&gt; elementos que tienen un atributo href</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>document.readyState</td>
+                <td>Devuelve el estado (de carga) del documento</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>document.referrer</td>
+                <td>Devuelve el URI del remitente (el documento de enlace)</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>document.scripts</td>
+                <td>Devuelve todos los &lt;script&gt; elementos</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>document.strictErrorChecking</td>
+                <td>Devuelve si se aplica la comprobación de errores</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>document.title</td>
+                <td>Devuelve el &lt;título&gt; elemento</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>document.URL</td>
+                <td>Devuelve la URL completa del documento</td>
+                <td>1</td>
+            </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="copyright">
+            &copy; Copyright <strong>Grupo 06<</strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+            <!--
+            All the links in the footer should remain intact.
+            You can delete the links only if you purchased the pro version.
+            Licensing information: https://bootstrapmade.com/license/
+            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Imperial
+          -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
