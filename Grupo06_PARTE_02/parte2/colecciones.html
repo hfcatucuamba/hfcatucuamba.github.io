@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>HTML DOM</title>
+  <title>Colecciones DOM</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -59,11 +59,9 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto" href="index.html#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#aboutNosotros">Introduccion</a></li>
-          <li><a class="nav-link scrollto" href="#contenido">Cambio Contenido</a></li>
-          <li><a class="nav-link scrollto " href="#atributo">Cambio Atributo</a></li>
-          <li><a class="nav-link scrollto " href="#dinamico">Contenido Dinamico</a></li>
+          <li><a class="nav-link scrollto" href="index.html#services">Home</a></li>
+          <li><a class="nav-link scrollto" href="#estilo">Objeto HTMLCollection</a></li>
+          <li><a class="nav-link scrollto " href="#eventos">Longitud HTMLCollection</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -78,8 +76,8 @@
 
         <div class="d-flex justify-content-between align-items-center">
           <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>HTML DOM</li>
+            <li><a href="index.html#services">Home</a></li>
+            <li>Colecciones DOM</li>
           </ol>
         </div>
 
@@ -87,36 +85,20 @@
     </section><!-- End Breadcrumbs -->
 
     <!-- ======= About Section ======= -->
-    <section id="aboutNosotros">
-      <div class="container about-container" data-aos="fade-up" data-aos-delay="300">
-        <div class="row">
-          <h1 class="text-center">JavaScript HTML DOM - Cambio de HTML</h1>
-          <div class="col-sm-12 col-md-12 col-lg-12 about-content">
-            <h2 class="aboutNosotros-title">CONCEPTO</h2>
-            <p class="aboutNosotros-text">
-              El HTML DOM permite que JavaScript cambie el contenido de los elementos HTML.
-            </p>
-            <h1 class="aboutNosotros-title">Cambio de contenido HTML</h1>
-            <p class="aboutNosotros-text">
-              Para hacer este proceso usamos la propiedad de innerHTML que nos permite cambiar el contenido de un elemento. 
-            </p>
-            <p class="aboutNosotros-text">
-              Para cambiar el contenido de un elemento HTML, utilice esta sintaxis: 
-            </p>
-            <ul>
-              <li><code>document.getElementById(id).innerHTML = new HTML</code></li>
-            </ul>
-          </div>
-        </div>
-        <br><br>
-      </div>
-    </section><!-- End About Section -->
-
-    <section id="contenido">
+    <section id="estilo">
+      <h1 class="text-center">JavaScript HTML DOM Collecciones</h1>
       <div class="container about-container" data-aos="fade-up" data-aos-delay="200">
         <div class="row">
-          <h2 class="titulo">Ejemplo</h2>
-          <p>Este ejemplo cambia el contenido de un &lt;p&gt; elemento:</p> 
+          <h2 class="titulo">El objeto HTMLCollection</h2>
+          <p>
+            El getElementsByTagName()método devuelve un HTMLCollectionobjeto.
+              <br>
+            Un HTMLCollectionobjeto es una lista similar a una matriz (colección) de elementos HTML.
+              <br>
+            El siguiente código selecciona todos los &lt;p&gt; elementos en un documento:
+              <br>
+            Se puede acceder a los elementos de la colección mediante un número de índice, el índice comienza en 0.
+          </p> 
           <div class="col-md-6 about-content">
             <h2 class="titulo">Código</h2>
             <code>
@@ -126,61 +108,15 @@
                 <br>
                 &lt;body&gt;
                 <br>
-                &lt;h2&gt;JavaScript puede cambiar HTML&lt;/h2&gt;
-                <br>
-                &lt;p id="p1"&gt;Hello World!&lt;/p&gt;
-                <br>
-                &lt;script&gt;document.getElementById("p1").innerHTML = "Hola Mundo";&lt;/script&gt;
-                <br>
-                &lt;p&gt;El párrafo anterior fue cambiado por un script.&lt;/p&gt;
-                <br>
-                &lt;/body&gt;
-                <br>
-                &lt;/html&gt;
-            </code>
-
-          </div>
-          <div class="col-lg-6 about-img" data-aos="fade-right" data-aos-delay="400">
-            <h2 class="titulo">Ejecución</h2>
-            <h4>JavaScript puede cambiar HTML</h4>
-            <p id="p1">Hello World!</p>
-            <p>El párrafo anterior fue cambiado por un script.</p>
-            <p>Click en el botón para cambiar el contenido &lt;p&gt; por Hola Mundo!</p>
-            <button onclick="myFunction()">Pruebalo</button>
-
-            <script type="text/javascript">
-              function myFunction() {
-                document.getElementById("p1").innerHTML = "Hola Mundo!";
-              }
-            </script>
-            <br><br>
-          </div>
-        </div>
-      </div>
-    </section><!-- End About Section -->
-
-    <section id="atributo">
-      <div class="container about-container" data-aos="fade-up" data-aos-delay="200">
-        <div class="row">
-          <h2 class="titulo">Cambiar el valor de un atributo</h2>
-          <p class="aboutNosotros-text">Para cambiar el valor de un atributo HTML, use esta sintaxis: <code>document.getElementById(id).attribute = nuevo valor</code></p>
-          <p>Este ejemplo cambia el valor del atributo src a un elemento: &lt;img&gt;</p> 
-          <div class="col-md-6 about-content">
-            <h2 class="titulo">Código</h2>
-            <code>
-              &lt;!DOCTYPE html&gt;
-              <br>
-                &lt;html&gt;
-                <br>
-                &lt;body&gt;
-                <br>
-                &lt;h2&gt;JavaScript HTML DOM&lt;/h2&gt;
-                <br>
-                &lt;img id="image" scr="../img/car.jpg"&gt;&lt;/p&gt;
-                <br>
-                &lt;script&gt;document.getElementById("image").src = "../img/programacion.gif";&lt;/script&gt;
-                <br>
-                &lt;p&gt;La imagen original era un auto.jpg, pero se la cambio por un gif.&lt;/p&gt;
+                &lt;h2 class="titulo"&gt;Ejecucion&lt;/h2&gt;<br>
+                &lt;h2&gt;JavaScript HTML DOM Colecciones&lt;/h2&gt;<br>
+                &lt;p&gt;Hola Mundo!&lt;/p&gt;<br>
+                &lt;p&gt;Hola Ecuador!&lt;/p&gt;<br>
+                &lt;p id="demo">&lt;/p&gt;<br>
+                &lt;script&gt;<br>
+                &nbsp;const myCollection = document.getElementsByTagName("p");<br>
+                &nbsp;document.getElementById("demo").innerHTML = "El innerHTML del segundo párrafo es:" + myCollection[1].innerHTML;<br>
+                &lt;/script&gt;<br>
                 <br>
                 &lt;/body&gt;
                 <br>
@@ -189,59 +125,80 @@
 
           </div>
           <div class="col-lg-6 about-img" data-aos="fade-right" data-aos-delay="400">
-            <h2 class="titulo">Ejecución</h2>
-            <h4>JavaScript HTML DOM</h4>
-            <img id="image" src="../img/car.jpg" width="160" height="120">
-            <p>La imagen original era un auto.jpg, pero se la cambio por un gif.</p>
-            <p>Click en el botón para cambiar la imagen</p>
-            <button onclick="cambio()">Pruebalo</button>
-
-            <script type="text/javascript">
-              function cambio() {
-                document.getElementById("image").src = "../img/programacion.gif";
-              }
-            </script>
-            <br><br>
-          </div>
-        </div>
-      </div>
-    </section><!-- End About Section -->
-
-    <section id="dinamico">
-      <div class="container about-container" data-aos="fade-up" data-aos-delay="200">
-        <div class="row">
-          <h2 class="titulo">Contenido HTML dinámico</h2>
-          <p>JavaScript puede crear contenido HTML dinámico: Fecha: Dom 04 Dic 2022 15:33:45 GMT-0500 (hora de Ecuador)</p> 
-          <div class="col-md-6 about-content">
-            <h2 class="titulo">Código</h2>
-            <code>
-              &lt;!DOCTYPE html&gt;
-              <br>
-                &lt;html&gt;
-                <br>
-                &lt;body&gt;
-                <br>
-                &lt;p id="demo"&gt;&lt;/p&gt;
-                <br>
-                &lt;script&gt;document.getElementById("demo").innerHTML = "Date : " + Date();&lt;/script&gt;
-                <br>
-                &lt;/body&gt;
-                <br>
-                &lt;/html&gt;
-                <br><br>
-            </code>
-
-          </div>
-          <div class="col-lg-6 about-img" data-aos="fade-right" data-aos-delay="400">
-            <h2 class="titulo">Ejecución</h2>
+            <h2 class="titulo">Ejecucion</h2>
+            <h2>JavaScript HTML DOM Colecciones</h2>
+            <p>Hola Mundo!</p>
+            <p>Hola Ecuador!</p>
             <p id="demo"></p>
-            <p>Click en el botón para ver la fecha actual</p>
-            <button onclick="dinamico()">Pruebalo</button>
+            <script>
+            const myCollection = document.getElementsByTagName("p");
+            document.getElementById("demo").innerHTML = "El innerHTML del segundo párrafo es: " + myCollection[2].innerHTML;
+            </script>
+            <br><br>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
 
-            <script type="text/javascript">
-              function dinamico() {
-                document.getElementById("demo").innerHTML = "Date : " + Date();
+    <section id="eventos">
+      <div class="container about-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="row">
+          <h2 class="titulo">HTMLCollection Longitud</h2>
+          <p class="aboutNosotros-text">La propiedad length define el número de elementos en un HTMLCollection y es útil cuando desea recorrer los elementos de una colección: </p>
+          <div class="col-md-6 about-content">
+            <h2 class="titulo">Codigo</h2>
+            <code>
+              &lt;!DOCTYPE html&gt;
+              <br>
+                &lt;html&gt;
+                <br>
+                &lt;body&gt;
+                <br>
+                &lt;h2>JavaScript HTML DOM Colecciones&lt;/h2&gt;<br>
+
+                &lt;p>Hola Mundo!&lt;/p&gt;<br>
+
+                &lt;p>Hola Ecuador!&lt;/p&gt;<br>
+
+                &lt;p>Haga clic en el botón para cambiar el color de todos los elementos p.&lt;/p&gt;<br>
+
+                &lt;button onclick="myFunction1()">Pruebalo&lt;/button&gt;<br>
+
+                &lt;script&gt;<br>
+                &nbsp;function myFunction1() {<br>
+                  &nbsp;&nbsp;const myCollection = document.getElementsByTagName("p");<br>
+                  &nbsp;&nbsp;for (let i = 0; i < myCollection.length; i++) {<br>
+                    &nbsp;&nbsp;&nbsp;myCollection[i].style.color = "green";<br>
+                  &nbsp;&nbsp;}<br>
+                &nbsp;}<br>
+                &lt;/script&gt;<br>
+
+                <br>
+                &lt;/body&gt;
+                <br>
+                &lt;/html&gt;
+            </code>
+
+          </div>
+          <div class="col-lg-6 about-img" data-aos="fade-right" data-aos-delay="400">
+            <h2 class="titulo">Ejecución</h2>
+            <h2>JavaScript HTML DOM Colecciones</h2>
+
+            <p>Hola Mundo!</p>
+
+            <p>Hola Ecuador!</p>
+
+            <p>Haga clic en el botón para cambiar el color de todos los elementos p.</p>
+
+            <button onclick="myFunction1()">Pruebalo</button>
+
+            <script>
+            function myFunction1() {
+              const myCollection = document.getElementsByTagName("p");
+              for (let i = 5; i < myCollection.length; i++) {
+                myCollection[i].style.color = "green";
               }
+            }
             </script>
             <br><br>
           </div>

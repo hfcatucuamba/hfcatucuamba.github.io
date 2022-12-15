@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Eventos DOM</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
+  <meta property="og:title" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
+
+  <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="">
+
+  <!-- Favicons -->
+  <link href="../img/numero6.ico" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Imperial - v5.9.1
+  * Template URL: https://bootstrapmade.com/imperial-free-onepage-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body onload="checkCookies()">
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo mr-auto"><img src="../img/titulo.png" alt=""></a>
+      <!-- Uncomment below if you prefer to use a text logo -->
+      <!-- <h1 class="logo mr-auto"><a href="index.html">Imperial</a></h1> -->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="index.html#services">Home</a></li>
+          <li><a class="nav-link scrollto" href="#aboutNosotros">Introduccion</a></li>
+          <li><a class="nav-link scrollto" href="#atributos">Atributos</a></li>
+          <li><a class="nav-link scrollto " href="#asignar">Asignar Eventos</a></li>
+          <li><a class="nav-link scrollto " href="#onload">Onload</a></li>
+          <li><a class="nav-link scrollto " href="#onmouseover">Onmouseover</a></li>
+          <li><a class="nav-link scrollto " href="#onmousedown">Onmousedown</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <ol>
+            <li><a href="index.html#services">Home</a></li>
+            <li>Elementos DOM</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= About Section ======= -->
+    <section id="aboutNosotros">
+      <div class="container about-container" data-aos="fade-up" data-aos-delay="300">
+        <div class="row">
+          <h1 class="text-center">JavaScript HTML DOM Eventos</h1>
+          <div class="col-sm-12 col-md-12 col-lg-12 about-content">
+            <h2 class="aboutNosotros-title">CONCEPTO</h2>
+            <p class="aboutNosotros-text">
+              Un JavaScript se puede ejecutar cuando ocurre un evento, como cuando un usuario hace clic en un elemento HTML.<br>Para ejecutar código cuando un usuario hace clic en un elemento, agregue código JavaScript a un atributo de evento HTML.
+            </p>
+            <h1 class="aboutNosotros-title">Ejemplos de eventos HTML:</h1>
+            <ul>
+              <li>Cuando un usuario hace clic con el mouse.</li>
+              <li>Cuando una página web ha cargado</li>
+              <li>Cuando se ha cargado una imagen</li>
+              <li>Cuando el mouse se mueve sobre un elemento</li>
+              <li>Cuando se cambia un campo de entrada</li>
+              <li>Cuando se envía un formulario HTML</li>
+              <li>Cuando un usuario pulsa una tecla</li>
+            </ul>
+          </div>
+        </div>
+        <br><br>
+      </div>
+    </section><!-- End About Section -->
+
+    <section id="atributos">
+      <div class="container about-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="row">
+          <h2 class="titulo">Atributos de eventos HTML</h2>
+          <p>Para asignar eventos a elementos HTML, puede usar atributos de eventos.<br> Este ejemplo se ejecutará una función nombrada displayDatecuando se haga clic en el botón:</p> 
+          <div class="col-md-6 about-content">
+            <h2 class="titulo">Codigo</h2>
+            <code>
+              &lt;!DOCTYPE html&gt;
+              <br>
+                &lt;html&gt;
+                <br>
+                &lt;body&gt;
+                <br>
+                &lt;h2>JavaScript HTML Eventos&lt;/h2&gt;<br>
+                &lt;p>Haga clic en el botón para mostrar la fecha.&lt;/p&gt;<br>
+                &lt;button onclick="displayDate()"&gt;¿La hora es?&lt;/button&gt;<br>
+                &lt;script&gt;<br>
+                function displayDate() {<br>
+                  &nbsp;document.getElementById("demo").innerHTML = Date();<br>
+                }<br>
+                &lt;/script&gt;<br>
+                &lt;p id="demo">&lt;/p&gt;<br>
+                <br>
+                &lt;/body&gt;
+                <br>
+                &lt;/html&gt;
+            </code>
+
+          </div>
+          <div class="col-lg-6 about-img" data-aos="fade-right" data-aos-delay="400">
+            <h2 class="titulo">Ejecucion</h2>
+            <h2>JavaScript HTML Eventos</h2>
+            <p>Haga clic en el botón para mostrar la fecha.</p>
+
+            <button onclick="displayDate()">¿La hora es?</button>
+
+            <script>
+            function displayDate() {
+              document.getElementById("demo").innerHTML = Date();
+            }
+            </script>
+
+            <p id="demo"></p>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
+
+    <section id="asignar">
+      <div class="container about-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="row">
+          <h2 class="titulo">Asignar eventos utilizando el HTML DOM</h2>
+          <p>El HTML DOM le permite asignar eventos a elementos HTML usando JavaScript.
+            <br>Este ejemplo displayDate se asigna una función con nombre a un elemento HTML con la extensión id="myBtn".
+            <br>La función se ejecutará cuando se haga clic en el botón.
+          </p> 
+          <div class="col-md-6 about-content">
+            <h2 class="titulo">Codigo</h2>
+            <code>
+              &lt;!DOCTYPE html&gt;
+              <br>
+                &lt;html&gt;
+                <br>
+                &lt;body&gt;
+                <br>
+
+                &lt;h2&gt;JavaScript HTML Eventos&lt;/h2&gt;<br>
+                &lt;p>Haga clic en "Pruébelo" para ejecutar la función&lt;/p&gt;<br>
+                &lt;button id="myBtn"&gt;Pruébelo&lt;/button&gt;<br>
+                &lt;p id="demo"&gt;&lt;/p&gt;<br>
+                &lt;script&gt;<br>
+                  &nbsp;document.getElementById("myBtn").onclick = displayDate;<br>
+                  &nbsp;function displayDate() {<br>
+                    &nbsp;&nbsp;document.getElementById("demo").innerHTML = Date();<br>
+                  &nbsp;}<br>
+                &lt;/script&gt;
+                <br>
+                &lt;/body&gt;
+                <br>
+                &lt;/html&gt;
+            </code>
+
+          </div>
+          <div class="col-lg-6 about-img" data-aos="fade-right" data-aos-delay="400">
+            <h2 class="titulo">Ejecucion</h2>
+            <h2>JavaScript HTML Eventos</h2>
+            <p>Haga clic en "Pruébelo" para ejecutar la función</p>
+            <button id="myBtn">Pruébelo</button>
+            <p id="demo1"></p>
+            <script>
+              document.getElementById("myBtn").onclick = displayDate1;
+              function displayDate1() {
+                document.getElementById("demo1").innerHTML = Date();
+              }
+            </script>
+            <br><br>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
+
+    <section id="onload">
+      <div class="container about-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="row">
+          <h2 class="titulo">Los eventos onload y onunload</h2>
+          <p>Los eventos onload y onunload se activan cuando el usuario entra o sale de la página.<br>El onload evento se puede utilizar para comprobar el tipo de navegador y la versión del navegador del visitante, y cargar la versión adecuada de la página web en función de la información.<br>Los eventos onload y onunload se pueden utilizar para tratar con las cookies</p> 
+          <div class="col-md-6 about-content">
+            <h2 class="titulo">Codigo</h2>
+            <code>
+              &lt;!DOCTYPE html&gt;
+              <br>
+                &lt;html&gt;
+                <br>
+                &lt;body onload="checkCookies()"&gt;
+                <br>
+                
+
+                &lt;h2&gt;JavaScript HTML Eventos&lt;/h2&gt;<br>
+                &lt;p id="demo"&gt;&lt;/p&gt;<br>
+
+                &lt;script&gt;<br>
+                &nbsp;function checkCookies() {<br>
+                  &nbsp;&nbsp;var text = "";<br>
+                  &nbsp;&nbsp;if (navigator.cookieEnabled == true) {<br>
+                    &nbsp;&nbsp;&nbsp;text = "Las cookies están habilitadas.";<br>
+                  &nbsp;&nbsp;} else {<br>
+                    &nbsp;&nbsp;&nbsp;text = "Las cookies no están habilitadas.";<br>
+                  &nbsp;&nbsp;}<br>
+                  &nbsp;&nbsp;document.getElementById("demo").innerHTML = text;<br>
+                }<br>
+                &lt;/script&gt;
+                <br>
+                &lt;/body&gt;
+                <br>
+                &lt;/html&gt;
+            </code>
+
+          </div>
+          <div class="col-lg-6 about-img" data-aos="fade-right" data-aos-delay="400">
+            <h2 class="titulo">Ejecución</h2>
+            <h2>JavaScript HTML Eventos</h2>
+            <p id="demo3"></p>
+
+            <script>
+            function checkCookies() {
+              var text = "";
+              if (navigator.cookieEnabled == true) {
+                text = "Las cookies están habilitadas.";
+              } else {
+                text = "Las cookies no están habilitadas.";
+              }
+              document.getElementById("demo3").innerHTML = text;
+            }
+            </script>
+            <br><br>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
+
+    <section id="onmouseover">
+      <div class="container about-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="row">
+          <h2 class="titulo">Los eventos onmouseover y onmouseout</h2>
+          <p>Los eventos onmouseover y onmouseout se pueden usar para activar una función cuando el usuario pasa el mouse sobre o fuera de un elemento HTML:</p> 
+          <div class="col-md-6 about-content">
+            <h2 class="titulo">Codigo</h2>
+            <code>
+              &lt;!DOCTYPE html&gt;
+              <br>
+                &lt;html&gt;
+                <br>
+                &lt;body&gt;
+                <br>
+                
+                &lt;div onmouseover="mOver(this)" onmouseout="mOut(this)" 
+                style="background-color:#D94A38;width:200px;height:190px;padding:70px;"&gt;
+                Ratón sobre Mí&lt;/div&gt;<br>
+
+                &lt;script&gt;<br>
+                &nbsp;function mOver(obj) {<br>
+                &nbsp;&nbsp;  obj.innerHTML = "Gracias"<br>
+                &nbsp;}<br>
+
+                &nbsp;function mOut(obj) {<br>
+                  &nbsp;&nbsp;obj.innerHTML = "Ratón sobre mí"<br>
+                &nbsp;}<br>
+
+                &lt;/script&gt;
+                <br>
+                &lt;/body&gt;
+                <br>
+                &lt;/html&gt;
+            </code>
+
+          </div>
+          <div class="col-lg-6 about-img" data-aos="fade-right" data-aos-delay="400">
+            <h2 class="titulo">Ejecucion</h2>
+            <div onmouseover="mOver(this)" onmouseout="mOut(this)" 
+            style="background-color:#F5A9E1;width:200px;height:190px;padding:70px;">
+            Ratón sobre Mí</div>
+
+            <script>
+            function mOver(obj) {
+              obj.innerHTML = "Gracias"
+            }
+
+            function mOut(obj) {
+              obj.innerHTML = "Ratón sobre mí"
+            }
+            </script>
+            <br><br>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
+
+    <section id="onmousedown">
+      <div class="container about-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="row">
+          <h2 class="titulo">Los eventos onmousedown, onmouseup y onclick</h2>
+          <p>Los eventos onmousedown, onmouseup y onclick son todos partes de un clic del mouse. Primero, cuando se hace clic en un botón del mouse, se activa el evento onmousedown, luego, cuando se suelta el botón del mouse, se activa el evento onmouseup, finalmente, cuando se completa el clic del mouse, se activa el evento onclick.</p> 
+          <div class="col-md-6 about-content">
+            <h2 class="titulo">Codigo</h2>
+            <code>
+              &lt;!DOCTYPE html&gt;
+              <br>
+                &lt;html&gt;
+                <br>
+                &lt;body&gt;
+                <br>
+                &lt;div onmousedown="mDown(this)" onmouseup="mUp(this)"
+                style="background-color:#F5A9E1;width:200px;height:190px;padding:70px;"&gt;
+                Click Me&lt;/div&gt;<br>
+
+                &lt;script&gt;<br>
+                &nbsp;function mDown(obj) {<br>
+                  &nbsp;&nbsp;obj.style.backgroundColor = "#F5A9E1";<br>
+                  &nbsp;&nbsp;obj.innerHTML = "Click sobre Mi";<br>
+                &nbsp;}<br>
+
+               &nbsp; function mUp(obj) {<br>
+                  &nbsp;&nbsp;obj.style.backgroundColor="#F6CED8";<br>
+                  &nbsp;&nbsp;obj.innerHTML="Gracias";<br>
+                &nbsp;}<br>
+                &lt;/script&gt;
+                <br>
+                &lt;/body&gt;
+                <br>
+                &lt;/html&gt;
+            </code>
+
+          </div>
+          <div class="col-lg-6 about-img" data-aos="fade-right" data-aos-delay="400">
+            <h2 class="titulo">Ejecucion</h2>
+            <div onmousedown="mDown(this)" onmouseup="mUp(this)"
+            style="background-color:#F5A9E1;width:200px;height:190px;padding:70px;">
+            Click Me</div>
+
+            <script>
+            function mDown(obj) {
+              obj.style.backgroundColor = "#F5A9E1";
+              obj.innerHTML = "Click sobre Mi";
+            }
+
+            function mUp(obj) {
+              obj.style.backgroundColor="#F6CED8";
+              obj.innerHTML="Gracias";
+            }
+            </script>
+            <br><br>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="copyright">
+            &copy; Copyright <strong>Aplicacion de Tecnologias WEB</strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+            <!--
+            All the links in the footer should remain intact.
+            You can delete the links only if you purchased the pro version.
+            Licensing information: https://bootstrapmade.com/license/
+            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Imperial
+          -->
+            Designed by <a href="https://bootstrapmade.com/">Grupo 06</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

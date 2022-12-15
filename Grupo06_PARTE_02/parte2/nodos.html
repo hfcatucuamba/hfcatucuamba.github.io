@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Nodos DOM</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
+  <meta property="og:title" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
+
+  <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="">
+
+  <!-- Favicons -->
+  <link href="../img/numero6.ico" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Imperial - v5.9.1
+  * Template URL: https://bootstrapmade.com/imperial-free-onepage-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body onload="checkCookies()">
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo mr-auto"><img src="../img/titulo.png" alt=""></a>
+      <!-- Uncomment below if you prefer to use a text logo -->
+      <!-- <h1 class="logo mr-auto"><a href="index.html">Imperial</a></h1> -->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="index.html#services">Home</a></li>
+          <li><a class="nav-link scrollto" href="#aboutNosotros">Introduccion</a></li>
+          <li><a class="nav-link scrollto" href="#atributos">Atributos</a></li>
+          <li><a class="nav-link scrollto " href="#asignar">Asignar Eventos</a></li>
+          <li><a class="nav-link scrollto " href="#onload">Onload</a></li>
+          <li><a class="nav-link scrollto " href="#onmouseover">Onmouseover</a></li>
+          <li><a class="nav-link scrollto " href="#onmousedown">Onmousedown</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <ol>
+            <li><a href="index.html#services">Home</a></li>
+            <li>Nodos DOM</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= About Section ======= -->
+    <section id="aboutNosotros">
+      <div class="container about-container" data-aos="fade-up" data-aos-delay="300">
+        <div class="row">
+          <h1 class="text-center">JavaScript HTML DOM Nodos</h1>
+          <div class="col-sm-12 col-md-12 col-lg-12 about-content">
+            <p class="aboutNosotros-text">
+              Adición y eliminación de nodos (elementos HTML)
+            </p>
+          </div>
+        </div>
+        <br>
+      </div>
+    </section><!-- End About Section -->
+
+    <section id="atributos">
+      <div class="container about-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="row">
+          <h2 class="titulo">Creación de nuevos elementos HTML (nodos)</h2>
+          <p>Para agregar un nuevo elemento al HTML DOM, primero debe crear el elemento (nodo de elemento) y luego agregarlo a un elemento existente.</p> 
+          <div class="col-md-6 about-content">
+            <h2 class="titulo">Codigo</h2>
+            <code>
+              &lt;!DOCTYPE html&gt;
+              <br>
+                &lt;html&gt;
+                <br>
+                &lt;body&gt;
+                <br>
+                &lt;h2&gt;JavaScript HTML DOM Nodos&lt;/h2&gt;<br>
+                &lt;p&gt;Agregue un nuevo elemento HTML.&lt;/p&gt;<br>
+
+                &lt;div id="div1"&gt;<br>
+                &lt;p id="p1"&gt;Este es un párrafo&lt;/p&gt;<br>
+                &lt;p id="p2"&gt;Este es otro párrafo.&lt;/p&gt;<br>
+                &lt;/div&gt;<br><br>
+
+                &lt;script&gt;<br>
+                &nbsp;const para = document.createElement("p");<br>
+                &nbsp;const node = document.createTextNode("Esto es nuevo.");<br>
+                &nbsp;para.appendChild(node);<br>
+                &nbsp;const element = document.getElementById("div1");<br>
+                &nbsp;element.appendChild(para);<br>
+                &lt;/script&gt;<br>
+                <br>
+                &lt;/body&gt;
+                <br>
+                &lt;/html&gt;
+            </code>
+
+          </div>
+          <div class="col-lg-6 about-img" data-aos="fade-right" data-aos-delay="400">
+            <h2 class="titulo">Ejecucion</h2>
+            <h2>JavaScript HTML DOM Nodos</h2>
+            <p>Agregue un nuevo elemento HTML.</p>
+
+            <div id="div1">
+            <p id="p1">Este es un párrafo</p>
+            <p id="p2">Este es otro párrafo.</p>
+            </div>
+
+            <script>
+            const para = document.createElement("p");
+            const node = document.createTextNode("Esto es nuevo.");
+            para.appendChild(node);
+            const element = document.getElementById("div1");
+            element.appendChild(para);
+            </script>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
+
+    <section id="asignar">
+      <div class="container about-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="row">
+          <h2 class="titulo">Creación de nuevos elementos HTML - insertBefore()</h2>
+          <p>El appendChild()método del ejemplo anterior, agregó el nuevo elemento como el último hijo del padre. Si no quieres eso, puedes usar el método insertBefore():
+          </p> 
+          <div class="col-md-6 about-content">
+            <h2 class="titulo">Codigo</h2>
+            <code>
+              &lt;!DOCTYPE html&gt;
+              <br>
+                &lt;html&gt;
+                <br>
+                &lt;body&gt;
+                <br>
+                &lt;h2&gt;JavaScript HTML DOM Nodos&lt;/h2&gt;<br>
+                &lt;p>Agregue un nuevo elemento HTML.&lt;/p&gt;<br>
+
+                &lt;div id="div"&gt;<br>
+                &lt;p id="p">Este es un párrafo.&lt;/p&gt;<br>
+                &lt;p id="p">Este es otro párrafo.&lt;/p&gt;<br>
+                &lt;/div&gt;<br><br>
+
+                &lt;script&gt;<br>
+                const para = document.createElement("p");<br>
+                const node = document.createTextNode("Esto es nuevo.");<br>
+                para.appendChild(node);<br><br>
+
+                const element = document.getElementById("div");<br>
+                const child = document.getElementById("p");<br>
+                element.insertBefore(para,child);<br>
+                &lt;/script&gt;<br>
+                <br>
+                &lt;/body&gt;
+                <br>
+                &lt;/html&gt;
+            </code>
+
+          </div>
+          <div class="col-lg-6 about-img" data-aos="fade-right" data-aos-delay="400">
+            <h2 class="titulo">Ejecucion</h2>
+            <h2>JavaScript HTML DOM Nodos</h2>
+            <p>Agregue un nuevo elemento HTML.</p>
+
+            <div id="div2">
+            <p id="p3">Este es un párrafo.</p>
+            <p id="p4">Este es otro párrafo.</p>
+            </div>
+
+            <script>
+            const para1 = document.createElement("p");
+            const node1 = document.createTextNode("Esto es nuevo.");
+            para1.appendChild(node1);
+
+            const element1 = document.getElementById("div2");
+            const child1 = document.getElementById("p3");
+            element1.insertBefore(para1,child1);
+            </script>
+            <br><br>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
+
+    <section id="onload">
+      <div class="container about-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="row">
+          <h2 class="titulo">Los eventos onload y onunload</h2>
+          <p>Los eventos onload y onunload se activan cuando el usuario entra o sale de la página.<br>El onload evento se puede utilizar para comprobar el tipo de navegador y la versión del navegador del visitante, y cargar la versión adecuada de la página web en función de la información.<br>Los eventos onload y onunload se pueden utilizar para tratar con las cookies</p> 
+          <div class="col-md-6 about-content">
+            <h2 class="titulo">Codigo</h2>
+            <code>
+              &lt;!DOCTYPE html&gt;
+              <br>
+                &lt;html&gt;
+                <br>
+                &lt;body onload="checkCookies()"&gt;
+                <br>
+                
+
+                &lt;h2&gt;JavaScript HTML Eventos&lt;/h2&gt;<br>
+                &lt;p id="demo"&gt;&lt;/p&gt;<br>
+
+                &lt;script&gt;<br>
+                &nbsp;function checkCookies() {<br>
+                  &nbsp;&nbsp;var text = "";<br>
+                  &nbsp;&nbsp;if (navigator.cookieEnabled == true) {<br>
+                    &nbsp;&nbsp;&nbsp;text = "Las cookies están habilitadas.";<br>
+                  &nbsp;&nbsp;} else {<br>
+                    &nbsp;&nbsp;&nbsp;text = "Las cookies no están habilitadas.";<br>
+                  &nbsp;&nbsp;}<br>
+                  &nbsp;&nbsp;document.getElementById("demo").innerHTML = text;<br>
+                }<br>
+                &lt;/script&gt;
+                <br>
+                &lt;/body&gt;
+                <br>
+                &lt;/html&gt;
+            </code>
+
+          </div>
+          <div class="col-lg-6 about-img" data-aos="fade-right" data-aos-delay="400">
+            <h2 class="titulo">Ejecución</h2>
+            <h2>JavaScript HTML Eventos</h2>
+            <p id="demo3"></p>
+
+            <script>
+            function checkCookies() {
+              var text = "";
+              if (navigator.cookieEnabled == true) {
+                text = "Las cookies están habilitadas.";
+              } else {
+                text = "Las cookies no están habilitadas.";
+              }
+              document.getElementById("demo3").innerHTML = text;
+            }
+            </script>
+            <br><br>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
+
+    <section id="onload">
+      <div class="container about-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="row">
+          <h2 class="titulo">Los eventos onload y onunload</h2>
+          <p>Los eventos onload y onunload se activan cuando el usuario entra o sale de la página.<br>El onload evento se puede utilizar para comprobar el tipo de navegador y la versión del navegador del visitante, y cargar la versión adecuada de la página web en función de la información.<br>Los eventos onload y onunload se pueden utilizar para tratar con las cookies</p> 
+          <div class="col-md-6 about-content">
+            <h2 class="titulo">Codigo</h2>
+            <code>
+              &lt;!DOCTYPE html&gt;
+              <br>
+                &lt;html&gt;
+                <br>
+                &lt;body onload="checkCookies()"&gt;
+                <br>
+                
+
+                &lt;h2&gt;JavaScript HTML Eventos&lt;/h2&gt;<br>
+                &lt;p id="demo"&gt;&lt;/p&gt;<br>
+
+                &lt;script&gt;<br>
+                &nbsp;function checkCookies() {<br>
+                  &nbsp;&nbsp;var text = "";<br>
+                  &nbsp;&nbsp;if (navigator.cookieEnabled == true) {<br>
+                    &nbsp;&nbsp;&nbsp;text = "Las cookies están habilitadas.";<br>
+                  &nbsp;&nbsp;} else {<br>
+                    &nbsp;&nbsp;&nbsp;text = "Las cookies no están habilitadas.";<br>
+                  &nbsp;&nbsp;}<br>
+                  &nbsp;&nbsp;document.getElementById("demo").innerHTML = text;<br>
+                }<br>
+                &lt;/script&gt;
+                <br>
+                &lt;/body&gt;
+                <br>
+                &lt;/html&gt;
+            </code>
+
+          </div>
+          <div class="col-lg-6 about-img" data-aos="fade-right" data-aos-delay="400">
+            <h2 class="titulo">Ejecución</h2>
+            <h2>JavaScript HTML Eventos</h2>
+            <p id="demo3"></p>
+
+            <script>
+            function checkCookies() {
+              var text = "";
+              if (navigator.cookieEnabled == true) {
+                text = "Las cookies están habilitadas.";
+              } else {
+                text = "Las cookies no están habilitadas.";
+              }
+              document.getElementById("demo3").innerHTML = text;
+            }
+            </script>
+            <br><br>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
+
+    <section id="onload">
+      <div class="container about-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="row">
+          <h2 class="titulo">Los eventos onload y onunload</h2>
+          <p>Los eventos onload y onunload se activan cuando el usuario entra o sale de la página.<br>El onload evento se puede utilizar para comprobar el tipo de navegador y la versión del navegador del visitante, y cargar la versión adecuada de la página web en función de la información.<br>Los eventos onload y onunload se pueden utilizar para tratar con las cookies</p> 
+          <div class="col-md-6 about-content">
+            <h2 class="titulo">Codigo</h2>
+            <code>
+              &lt;!DOCTYPE html&gt;
+              <br>
+                &lt;html&gt;
+                <br>
+                &lt;body onload="checkCookies()"&gt;
+                <br>
+                
+
+                &lt;h2&gt;JavaScript HTML Eventos&lt;/h2&gt;<br>
+                &lt;p id="demo"&gt;&lt;/p&gt;<br>
+
+                &lt;script&gt;<br>
+                &nbsp;function checkCookies() {<br>
+                  &nbsp;&nbsp;var text = "";<br>
+                  &nbsp;&nbsp;if (navigator.cookieEnabled == true) {<br>
+                    &nbsp;&nbsp;&nbsp;text = "Las cookies están habilitadas.";<br>
+                  &nbsp;&nbsp;} else {<br>
+                    &nbsp;&nbsp;&nbsp;text = "Las cookies no están habilitadas.";<br>
+                  &nbsp;&nbsp;}<br>
+                  &nbsp;&nbsp;document.getElementById("demo").innerHTML = text;<br>
+                }<br>
+                &lt;/script&gt;
+                <br>
+                &lt;/body&gt;
+                <br>
+                &lt;/html&gt;
+            </code>
+
+          </div>
+          <div class="col-lg-6 about-img" data-aos="fade-right" data-aos-delay="400">
+            <h2 class="titulo">Ejecución</h2>
+            <h2>JavaScript HTML Eventos</h2>
+            <p id="demo3"></p>
+
+            <script>
+            function checkCookies() {
+              var text = "";
+              if (navigator.cookieEnabled == true) {
+                text = "Las cookies están habilitadas.";
+              } else {
+                text = "Las cookies no están habilitadas.";
+              }
+              document.getElementById("demo3").innerHTML = text;
+            }
+            </script>
+            <br><br>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
+    
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="copyright">
+            &copy; Copyright <strong>Aplicacion de Tecnologias WEB</strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+            <!--
+            All the links in the footer should remain intact.
+            You can delete the links only if you purchased the pro version.
+            Licensing information: https://bootstrapmade.com/license/
+            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Imperial
+          -->
+            Designed by <a href="https://bootstrapmade.com/">Grupo 06</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
