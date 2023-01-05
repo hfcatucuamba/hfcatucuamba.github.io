@@ -1,0 +1,3 @@
+<h1>Demostración sencilla de Ajax</h1>
+<p id="hint">Este es un ejemplo simple de carga de Ajax.</p>
+
