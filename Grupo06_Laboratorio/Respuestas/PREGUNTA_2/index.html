@@ -44,26 +44,24 @@
 
   
   //Funcion para recuperar los datos del archivo .txt
-  function CargarDatos() {
-      xhttp = new XMLHttpRequest(); //Creacion del objeto XMLHttpRequest
+
+function CargarDatos() {
+  xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("resolucion").innerHTML =
-      this.responseText;
+      var xmlDoc = this.responseXML;
+      var texto = "";
+      const nombres = xmlDoc.getElementsByTagName("nombre");
+      const comidas = xmlDoc.getElementsByTagName("comida");
+      for (var i = 0; i < nombres.length; i++) {
+        texto+= nombres[i].childNodes[0].nodeValue + " come " + comidas[i].childNodes[0].nodeValue + "<br>";
+      }
+      document.getElementById("resolucion").innerHTML = texto;
     }
   };
-  
-  xhttp.open("GET", "ejemplo.xml", true);//Enviar la solicitud para obtener el archivo .txt
-  xhttp.send();  // Solo funciona con el protocolo http (on-line)
-  xmlDoc = xmlhttp.responseXML;
-     document.getElementById("resolucion").innerHTML = '';
-    const nombres = xmlDoc.getElementsByTagName("nombre");
-    const comidas = xmlDoc.getElementsByTagName("comida");
-    for (var i = 0; i < nombres.length; i++) {
-      document.getElementById("resolucion").innerHTML += nombre.childNodes[0].nodeValue + " come " + comidas[i].childNodes[0].nodeValue;
-    }
-    
-  }
+  xhttp.open("GET", "ejemplo.xml", true);
+  xhttp.send();
+}
   
 </script>
 

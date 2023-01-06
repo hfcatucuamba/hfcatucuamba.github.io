@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pregunta 4</title>
+  <style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse:collapse;
+}
+th, td {
+  padding: 5px;
+}
+</style>
+</head>
+<body style="background-image: url(../../Imagenes/fondo.jpg) ;background-size: cover;">
+<div class="container">
+  <div class="row">
+    <div class="section" style="margin-left: 10%;margin-top: 10%;">
+      <img src="../../Imagenes/selloespe.jpg" alt="">
+    </div>
+    <div class="section" id="enunciado" style="margin-left: 10%;margin-top: 5%;">
+      <h1 style="text-align: center;">Pregunta 4</h1>
+      <p>4)Mostrar datos XML en una tabla utilizando AJAX.</p>
+      <div class="section" id="enunciado" style="margin-left: 45%;margin-top: 5%;" style="text-align:center;">
+      <button style="align-self: center;" type="button" onclick="CargarDatos()">Obtener Tabla</button>
+      </div>
+      <div class="section" style="margin-left: 38%;margin-top: 5%;">
+        <table id="resolucion"></table>
+      </div>
+      <button onclick="window.location.href='../../index.html'">Menu principal</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function CargarDatos() {
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var xmlDoc = this.responseXML;
+      var table="<tr><th>ID</th><th>Nombre</th><th>Comida</th></tr>";
+      const ids = xmlDoc.getElementsByTagName("id");
+      const nombres = xmlDoc.getElementsByTagName("nombre");
+      const comidas = xmlDoc.getElementsByTagName("comida");
+      for (var i = 0; i <ids.length; i++) { 
+        table += "<tr><td>" +
+        ids[i].childNodes[0].nodeValue +
+        "</td><td>" +
+        nombres[i].childNodes[0].nodeValue +
+        "</td><td>"+
+        comidas[i].childNodes[0].nodeValue +
+        "</td></tr>";
+      }
+      document.getElementById("resolucion").innerHTML = table;
+    }
+  };
+  xmlhttp.open("GET", "animales.xml", true);
+  xmlhttp.send();
+}
+
+</script>
+
+</body>
+</html>
