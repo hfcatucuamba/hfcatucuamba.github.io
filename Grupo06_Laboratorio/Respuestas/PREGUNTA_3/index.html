@@ -6,6 +6,14 @@
   <style type="text/css">
     #background{position:absolute; width:99%; height:130%;}
     #fixed {position:absolute; top: 0px; left: 0px;}
+    table,th,td,tr {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+    th,td,tr {
+      padding: 5px;
+    }
   </style>
 </head>
 <body>
@@ -17,12 +25,17 @@
 <br>
     <img src="../../Imagenes/selloespe.jpg"  width="65%" align="center">
     <h1 style="padding-left:25%;">Pregunta 3</h1>
-<p>Escoja su género de películas preferido para desplegar una tabla con la información correspondiente</p>
+<p>Escoja el protagonista de peliculas preferido para desplegar una tabla con la informacion correspondiente</p>
 <select id="myselect" onchange="change_myselect(this.value)">
   <option value="">Elija una de las siguientes opciones.</option>
-  <option value="Terror">Terror</option>
-  <option value="Drama">Drama</option>
-  <option value="Accion">Accion</option>
+  <option value="Patrick Williams">Patrick Williams</option>
+  <option value="Yodel Fredder">Yodel Fredder</option>
+  <option value="Bill Skarsgard">Bill Skarsgard</option>
+  <option value="Vera Farmiga">Vera Farmiga</option>
+  <option value="Keanu Reaves">Keanu Reaves</option>
+  <option value="Sylvester Stallone">Sylvester Stallone</option>
+  <option value="Brad Pitt">Brad Pitt</option>
+
 </select>
 <p id="demo"></p>
 <br>
@@ -33,21 +46,29 @@
 
 // Desarrolle el script correspondiente, para que se escoja el actor y despliegue todas las peliculas correspondientes.
 function change_myselect(sel) {
-  var obj, dbParam, xmlhttp;
-  obj = { table: sel, limit: 20 };
-  dbParam = JSON.stringify(obj);
-  xmlhttp = new XMLHttpRequest();
+  var dbParam, xmlhttp;
+  dbParam = JSON.stringify({ table: sel, limit: 20 }); //Convierta un objeto de JavaScript en una cadena JSON
+  xmlhttp = new XMLHttpRequest(); // crear una instancia de objeto para solicitar datos de un servidor.
   
-  
-  xmlhttp.onreadystatechange = function() {
-    
-	
-	
+  xmlhttp.onreadystatechange = function() {//especifica una función que se ejecutará cada vez que cambie el estado del objeto XMLHttpRequest. 
+    if (this.readyState == 4 && this.status == 200){
+      const objeto = JSON.parse(this.responseText); //toma una cadena JSON y la transforma en un objeto JavaScript
+      var text = "<table border='1'><tr><th>Genero</th><th>Nombre</th></tr>";
+      for (var x in objeto.peliculas) {
+        if (objeto.peliculas[x].Protagonista == sel) {
+          text += "<tr><td>" + objeto.peliculas[x].Genero + "</td><td>" + objeto.peliculas[x].Nombre + "</td><tr>";
+        }
+      }
+
+      text += "</table>"
+      document.getElementById("demo").innerHTML = text;
+    }
     };
-	
-	
+  //inicializa una solicitud recién creada o reinicializa una existente.
   xmlhttp.open("GET", "./ListaPeliculas.json", true);
+  //indicando que los datos a enviarse están codificados como un formulario.
   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  //Enviamos la solicitud
   xmlhttp.send("x=" + dbParam);
 }
 </script>
