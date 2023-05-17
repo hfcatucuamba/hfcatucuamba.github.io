@@ -1,17 +1,12 @@
 <?php
-class vehiculo{
+class marca{
 	
 	
 	private $id;
-	private $placa;
-	private $marca;
-	private $motor;
-	private $chasis;
-	private $combustible;
-	private $anio;
-	private $color;
+	private $descripcion;
+	private $pais;
+	private $direccion;
 	private $foto;
-	private $avaluo;
 	private $con;
 	
 	function __construct($cn){
@@ -23,28 +18,24 @@ class vehiculo{
 	public function get_form($id=NULL){
 		// Código agregado -- //
 	if(($id == NULL) || ($id == 0) ) {
-			$this->placa = NULL;
-			$this->marca = NULL;
-			$this->motor = NULL;
-			$this->chasis = NULL;
-			$this->combustible = NULL;
-			$this->anio = NULL;
-			$this->color = NULL;
+			$this->descripcion = NULL;
+			$this->pais = NULL;
+			$this->direccion = NULL;
 			$this->foto = NULL;
-			$this->avaluo =NULL;
+			
 			
 			$flag = 'enabled';
 			$op = "new";
 			$bandera = 1;
 	}else{
-			$sql = "SELECT * FROM vehiculo WHERE id=$id;";
+			$sql = "SELECT * FROM marca WHERE id=$id;";
 			$res = $this->con->query($sql);
 			$row = $res->fetch_assoc();
             $num = $res->num_rows;
             $bandera = ($num==0) ? 0 : 1;
             
             if(!($bandera)){
-                $mensaje = "tratar de actualizar el vehiculo con id= ".$id . "<br>";
+                $mensaje = "tratar de actualizar el marca con id= ".$id . "<br>";
                 echo $this->_message_error($mensaje);
 				
             }else{                
@@ -57,15 +48,12 @@ class vehiculo{
 			
 		
              // ATRIBUTOS DE LA CLASE VEHICULO   
-                $this->placa = $row['placa'];
-                $this->marca = $row['marca'];
-                $this->motor = $row['motor'];
-                $this->chasis = $row['chasis'];
-                $this->combustible = $row['combustible'];
-                $this->anio = $row['anio'];
-                $this->color = $row['color'];
+                $this->descripcion = $row['descripcion'];
+                $this->pais = $row['pais'];
+                $this->direccion = $row['direccion'];
                 $this->foto = $row['foto'];
-                $this->avaluo = $row['avaluo'];
+
+
 				
                 //$flag = "disabled";
 				$flag = "enabled";
@@ -74,11 +62,6 @@ class vehiculo{
 	}
         
 	if($bandera){
-    
-		$combustibles = ["Gasolina",
-						 "Diesel",
-						 "Eléctrico"
-						 ];
 		$html = '
 		<section>
 		<div class="banner">
@@ -94,48 +77,36 @@ class vehiculo{
 		<input type="hidden" name="op" value="' . $op  . '">
 			<table  align="center"table table-striped gap-3 >
 				<tr>
-					<th colspan="2" ><strong><FONT SIZE=7>DATOS VEHÍCULO</font></th>
+					<th colspan="2" ><strong><FONT SIZE=7>MARCAS</font></th>
 				</tr>
 				<tr class="mx-auto">
-					<td><strong><FONT SIZE=5>Placa:</font></strong></td>
+					<td><strong><FONT SIZE=5>Descripcion:</font></strong></td>
+					<td><input type="text"  for="floatingTextInput1"  class="col-12" name="descripcion" value="' . $this->descripcion . '"></td>
+				</tr>
+				<tr class="mx-auto">
+					<td><strong><FONT SIZE=5>Pais:</font></strong></td>
 					
-					<td><input for="floatingTextInput1" class="col-12" type="text" name="placa" value="' . $this->placa . '"></td>
+					<td><input for="floatingTextInput1" class="col-12" type="text" name="pais" value="' . $this->pais  . '"></td>
 				</tr>
 				<tr class="mx-auto">
-					<td><strong><FONT SIZE=5>Marca:</font></strong></td>
-					<td> '. $this->_get_combo_db("marca","id","descripcion","marca",$this->marca) . '</td>
-				</tr>
-				<tr class="mx-auto">
-					<td><strong><FONT SIZE=5>Motor:</font></strong></td>
-					<td><input type="text"  for="floatingTextInput1"  class="col-12" name="motor" value="' . $this->motor . '"></td>
-				</tr>	
-				<tr class="mx-auto">
-					<td><strong><FONT SIZE=5>Chasis:</font></strong></td>
-					<td><input type="text" size="15"  for="floatingTextInput1" class="col-12" name="chasis" value="' . $this->chasis . '"></td>
-				</tr>
-				<tr class="mx-auto">
-					<td><strong><FONT SIZE=5>Combustible:</font></strong></td>
-					<td>' . $this->_get_radio($combustibles, "combustible",$this->combustible) . '</td>
-				</tr>
-				<tr class="mx-auto">
-					<td><strong><FONT SIZE=5>Año:</font></strong></td>
-					<td>' . $this->_get_combo_anio("anio",1950,$this->anio) . '</td>
-				</tr>
-				<tr class="mx-auto">
-					<td><strong><FONT SIZE=5>Color:</font></strong></td>
-					<td>' . $this->_get_combo_db("color","id","descripcion","color", $this->color) . '</td>
+					<td><strong><FONT SIZE=5>Direccion:</font></strong></td>
+					<td><input type="text" size="15"  for="floatingTextInput1" class="col-12" name="direccion" value="' . $this->direccion . '"></td>
 				</tr>
 				<tr class="mx-auto">
 					<td><strong><FONT SIZE=5>Foto:</font></strong></td>
 					<td><input type="file" name="foto" class="col-12"' . $flag . '></td>
 				</tr>
-				<tr class="mx-auto">
-					<td><strong><FONT SIZE=5>Avalúo:</font></strong></td>
-					<td><input for="floatingTextInput1" class="col-12" type="text"  name="avaluo" value="' . $this->avaluo . '" ' . $flag . '></td>
-				</tr>
-				<tr class="mx-auto">
-					<th colspan="2"><input type="submit" name="Guardar" value="GUARDAR"  class="btn btn-primary col-12 "></th>
-				</tr>												
+
+				<th colspan="1" class="text-center">
+				    <div class="d-flex justify-content-end">
+				      <input type="submit" name="Guardar" value="GUARDAR" class="btn btn-primary">
+				    </div>
+				  </th>
+				  <th colspan="3" class="text-center">
+				    <div class="d-flex justify-content-center">
+				      <a class="btn btn-primary" href="index.php">CANCELAR</a>
+				    </div>
+				  </th>												
 			</table>
 			</div>
 
@@ -160,18 +131,17 @@ class vehiculo{
 			<div class=" text-center ">
 		<table class="table" align="center" style="text-align:center;" border="1">
 			<tr>
-				<th colspan="8" class="text-light bg-dark">Lista de Vehículos</th>
+				<th colspan="8" class="text-light bg-dark">Marcas</th>
 			</tr>
 			<tr>
 				<th colspan="8" ><a class="btn bg-secondary col-sm-8 " href="index.php?d=' . $d_new_final . '" >Nuevo</a></th>
 			</tr>
 
 			<tr class="table-active btn-primary" >
-				<th>Placa</th>
-				<th>Marca</th>
-				<th>Color</th>
-				<th>Año</th>
-				<th>Avalúo</th>
+				<th>Descripcion</th>
+				<th>Pais</th>
+				<th>Direccion</th>
+				<th>Foto</th>
 				<th colspan="3">Acciones</th>
 			</tr>
 
@@ -179,9 +149,8 @@ class vehiculo{
 			</div>
 			</div>
 			</div>';
-		$sql = "SELECT v.id, v.placa, m.descripcion as marca, c.descripcion as color, v.anio, v.avaluo  
-		        FROM vehiculo v, color c, marca m 
-				WHERE v.marca=m.id AND v.color=c.id;";	
+		$sql = "SELECT m.id, m.descripcion, m.pais, m.direccion, m.foto  
+		        FROM marca m;";
 		$res = $this->con->query($sql);
 		
 		
@@ -214,11 +183,10 @@ class vehiculo{
 				<tbody>
 
 					<tr>
-						<td>' . $row['placa'] . '</td>
-						<td>' . $row['marca'] . '</td>
-						<td>' . $row['color'] . '</td>
-						<td>' . $row['anio'] . '</td>
-						<td>' . $row['avaluo'] . '</td>
+						<td>' . $row['descripcion'] . '</td>
+						<td>' . $row['pais'] . '</td>
+						<td>' . $row['direccion'] . '</td>
+						<td>' . $row['foto'] . '</td>
 						<td><a class="btn btn-danger btn-responsive " href="index.php?d=' . $d_del_final . '">Borrar</a></td>
 						<td><a  class="btn btn-success btn-responsive" href="index.php?d=' . $d_act_final . '">Actualizar</a></td>
 						<td><a  class="btn btn-warning btn-responsive" href="index.php?d=' . $d_det_final . '">Detalle</a></td>
@@ -228,11 +196,12 @@ class vehiculo{
 			 
 		    }
 		}else{
-			$mensaje = "Tabla Vehiculo" . "<br>";
+			$mensaje = "Tabla Marca" . "<br>";
             echo $this->_message_BD_Vacia($mensaje);
 			echo "<br><br><br>";
 		}
 		$html .= '</table>';
+		$html .= '<a href="../index.html" class="btn btn-primary">Regresar</a>';
 		return $html;
 		
 	}
@@ -306,10 +275,10 @@ class vehiculo{
 	
 //****************************************** NUEVO CODIGO *****************************************
 
-public function get_detail_vehiculo($id){
-		$sql = "SELECT v.placa, m.descripcion as marca, v.motor, v.chasis, v.combustible, v.anio, c.descripcion as color, v.foto, v.avaluo  
-				FROM vehiculo v, color c, marca m 
-				WHERE v.id=$id AND v.marca=m.id AND v.color=c.id;";
+public function get_detail_marca($id){
+		$sql = "SELECT m.descripcion, m.pais, m.direccion,m.foto
+				FROM marca m 
+				WHERE m.id=$id;";
 		$res = $this->con->query($sql);
 		$row = $res->fetch_assoc();
 		
@@ -317,7 +286,7 @@ public function get_detail_vehiculo($id){
 		$num = $res->num_rows;
         
 	if($num == 0){
-        $mensaje = "desplegar el detalle del vehiculo con id= ".$id . "<br>";
+        $mensaje = "desplegar el detalle de la marca con id= ".$id . "<br>";
         echo $this->_message_error($mensaje);
 				
     }else{ 
@@ -336,44 +305,20 @@ public function get_detail_vehiculo($id){
 			<div class="card-body ">
 		<table align="center"table table-striped gap-3 >
 			<tr>
-				<th colspan="2"><strong><FONT SIZE=7>DATOS DEL VEHÍCULO</font></th>
+				<th colspan="2"><strong><FONT SIZE=7>DATOS DE LA MARCA</font></th>
 			</tr>
 			<tr>
-				<td><strong><FONT SIZE=5>Placa: </td>
-				<td>'. $row['placa'] .'</td>
+				<td><strong><FONT SIZE=5>Descripcion: </td>
+				<td>'. $row['descripcion'] .'</td>
 			</tr>
 			<tr>
-				<td><strong><FONT SIZE=5>Marca: </td>
-				<td>'. $row['marca'] .'</td>
+				<td><strong><FONT SIZE=5>Pais: </td>
+				<td>'. $row['pais'] .'</td>
 			</tr>
 			<tr>
-				<td><strong><FONT SIZE=5>Motor: </td>
-				<td>'. $row['motor'] .'</td>
-			</tr>
-			<tr>
-				<td><strong><FONT SIZE=5>Chasis: </td>
-				<td>'. $row['chasis'] .'</td>
-			</tr>
-			<tr>
-				<td><strong><FONT SIZE=5>Combustible: </td>
-				<td>'. $row['combustible'] .'</td>
-			</tr>
-			<tr>
-				<td><strong><FONT SIZE=5>Anio: </td>
-				<td>'. $row['anio'] .'</td>
-			</tr>
-			<tr>
-				<td><strong><FONT SIZE=5>Color: </td>
-				<td>'. $row['color'] .'</td>
-			</tr>
-			<tr>
-				<td><strong><FONT SIZE=5>Avalúo: </td>
-				<th>$'. $row['avaluo'] .' USD</th>
-			</tr>
-			<tr>
-				<td><strong><FONT SIZE=5>Valor Matrícula: </td>
-				<th>$'. $this->_calculo_matricula($row['avaluo']) .' USD</th>
-			</tr>			
+				<td><strong><FONT SIZE=5>Direccion: </td>
+				<td>'. $row['direccion'] .'</td>
+			</tr>		
 			<tr>
 				<th colspan="2"><center><img src="images/' . $row['foto'] . '" width="300px"/></center></th>
 			</tr>	
@@ -393,13 +338,13 @@ public function get_detail_vehiculo($id){
 }
 
 
-	public function delete_vehiculo($id){
+	public function delete_marca($id){
 		
 /*		$mensaje = "PROXIMAMENTE SE ELIMINARA el vehiculo con id= ".$id . "<br>";
         echo $this->_message_error($mensaje);*/
 		
 	   
-		$sql = "DELETE FROM vehiculo WHERE id=$id;";
+		$sql = "DELETE FROM marca WHERE id=$id;";
 		if($this->con->query($sql)){
 			echo $this->_message_ok("eliminó");
 		}else{
@@ -408,22 +353,15 @@ public function get_detail_vehiculo($id){
    		
 	}
 
-	public function update_vehiculo($datos){
+			
+
+	public function update_marca($datos){
 		$this->id = $datos['id'];
-		$this->placa = $datos['placa'];
-		$this->marca = $datos['marca'];
-		$this->motor = $datos['motor'];
-		$this->chasis = $datos['chasis'];
-		$this->combustible = $datos['combustible'];
-		$this->anio = $datos['anio'];
-		$this->color = $datos['color'];
-		$sql = "UPDATE vehiculo SET placa='$this->placa',
-						marca=$this->marca,
-						motor='$this->motor',
-						chasis='$this->chasis',
-						combustible='$this->combustible',
-						anio='$this->anio',
-						color=$this->color
+		$this->descripcion = $datos['descripcion'];
+		$this->direccion  = $datos['direccion'];
+		$this->pais= $datos['pais'];
+		$this->foto = $_FILES['foto']['name'];
+		$sql = "UPDATE marca SET descripcion='$this->descripcion', pais='$this->pais', direccion='$this->direccion', foto='$this->foto'
 	WHERE id=$this->id;";
 		if($this->con->query($sql)){
 			echo $this->_message_ok("actualizó");
@@ -432,18 +370,13 @@ public function get_detail_vehiculo($id){
 		}
 	}
 
-	public function save_vehiculo($datos){
-		$this->placa = $datos['placa'];
-		$this->marca = $datos['marca'];
-		$this->motor = $datos['motor'];
-		$this->chasis = $datos['chasis'];
-		$this->combustible = $datos['combustible'];
-		$this->anio = $datos['anio'];
+	public function save_marca($datos){
+		$this->descripcion = $datos['descripcion'];
+		$this->direccion  = $datos['direccion'];
+		$this->pais= $datos['pais'];
 		$this->foto = $_FILES['foto']['name'];
-		$this->avaluo = $datos['avaluo'];
-		$this->color = $datos['color'];
-		$sql = "INSERT INTO vehiculo (placa, marca, motor, chasis, combustible, anio, color, foto, avaluo) 
-				VALUES ('$this->placa', $this->marca,'$this->motor', '$this->chasis', '$this->combustible', '$this->anio',$this->color, '$this->foto', $this->avaluo);";
+		$sql = "INSERT INTO marca (descripcion, pais, direccion, foto) 
+				VALUES ('$this->descripcion','$this->pais','$this->direccion','$this->foto');";
 		if($this->con->query($sql)){
 			echo $this->_message_ok("grabo");
 		}else{

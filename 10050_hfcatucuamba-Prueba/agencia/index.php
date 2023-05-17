@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
 <head>
-	<title>Matriculas Vehículos - PARTE II</title>
+	<title>Agencias</title>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <style>
@@ -22,10 +22,10 @@
 <body>
 	<?php
 	    include_once("../constantes.php");
-		require_once("class/class.vehiculo.php");
+		require_once("class/class.agencia.php");
 		
 		$cn = conectar();
-		$v = new vehiculo($cn);
+		$a = new agencia($cn);
 		//vehiculo::MetodoEstatico();
 		
 		
@@ -63,13 +63,13 @@
 			$id = $tmp[1];
 			
 			if($op == "det"){
-				echo $v->get_detail_vehiculo($id);
+				echo $a->get_detail_agencia($id);
 			}elseif($op == "act"){
-				echo $v->get_form($id);
+				echo $a->get_form($id);
 			}elseif($op == "new"){
-				echo $v->get_form();
+				echo $a->get_form();
 			}elseif($op == "del"){
-				echo $v->delete_vehiculo($id); 
+				echo $a->delete_agencia($id); 
 			}
 		
 	
@@ -83,12 +83,12 @@
 				echo "</pre>";
 		      */
 		if(isset($_POST['Guardar']) && $_POST['op']=="new"){
-				$v->save_vehiculo($_POST);
+				$a->save_agencia($_POST);
 			}
 			if(isset($_POST['Guardar']) && $_POST['op']=="act"){
-				$v->update_vehiculo($_POST);
+				$a->update_agencia($_POST);
 			}else{
-				echo $v->get_list($_POST);
+				echo $a->get_list($_POST);
 			}	
 		}
 				
@@ -114,7 +114,6 @@
 		
 	?>	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-	<a href="../index.html" class="btn btn-primary">Regresar</a>
 
 </body>
 </html>

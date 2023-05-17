@@ -131,16 +131,24 @@ class vehiculo{
 				</tr>
 				<tr class="mx-auto">
 					<td><strong><FONT SIZE=5>Avalúo:</font></strong></td>
-					<td><input for="floatingTextInput1" class="col-12" type="text"  name="avaluo" value="' . $this->avaluo . '" ' . $flag . '></td>
+					<td><input for="floatingTextInput1" class="col-12" type="text"  name="avaluo" value="' . $this->avaluo . '" ' . $flag . '><tr
+				<tr>
+				  <th colspan="1" class="text-center">
+				    <div class="d-flex justify-content-end">
+				      <input type="submit" name="Guardar" value="GUARDAR" class="btn btn-primary">
+				    </div>
+				  </th>
+				  <th colspan="3" class="text-center">
+				    <div class="d-flex justify-content-center">
+				      <a class="btn btn-primary" href="index.php">CANCELAR</a>
+				    </div>
+				  </th>
 				</tr>
-				<tr class="mx-auto">
-					<th colspan="2"><input type="submit" name="Guardar" value="GUARDAR"  class="btn btn-primary col-12 "></th>
-				</tr>												
+
 			</table>
 			</div>
 
 			</div></div></div>
-
 			<section>
 			';
 		return $html;
@@ -160,10 +168,7 @@ class vehiculo{
 			<div class=" text-center ">
 		<table class="table" align="center" style="text-align:center;" border="1">
 			<tr>
-				<th colspan="8" class="text-light bg-dark">Lista de Vehículos</th>
-			</tr>
-			<tr>
-				<th colspan="8" ><a class="btn bg-secondary col-sm-8 " href="index.php?d=' . $d_new_final . '" >Nuevo</a></th>
+				<th colspan="8" class="text-light bg-dark">Matricular de Vehículos</th>
 			</tr>
 
 			<tr class="table-active btn-primary" >
@@ -175,7 +180,6 @@ class vehiculo{
 				<th colspan="3">Acciones</th>
 			</tr>
 
-			
 			</div>
 			</div>
 			</div>';
@@ -219,10 +223,9 @@ class vehiculo{
 						<td>' . $row['color'] . '</td>
 						<td>' . $row['anio'] . '</td>
 						<td>' . $row['avaluo'] . '</td>
-						<td><a class="btn btn-danger btn-responsive " href="index.php?d=' . $d_del_final . '">Borrar</a></td>
-						<td><a  class="btn btn-success btn-responsive" href="index.php?d=' . $d_act_final . '">Actualizar</a></td>
-						<td><a  class="btn btn-warning btn-responsive" href="index.php?d=' . $d_det_final . '">Detalle</a></td>
+						<td><a class="btn btn-danger btn-responsive " href="#">Matricular</a></td>
 					</tr>
+
 					</tbody>
 					';
 			 
@@ -233,6 +236,8 @@ class vehiculo{
 			echo "<br><br><br>";
 		}
 		$html .= '</table>';
+		$html .= '<a href="../index.html" class="btn btn-primary">Regresar</a>';
+		
 		return $html;
 		
 	}
@@ -417,13 +422,15 @@ public function get_detail_vehiculo($id){
 		$this->combustible = $datos['combustible'];
 		$this->anio = $datos['anio'];
 		$this->color = $datos['color'];
+		$this->foto = $_FILES['foto']['name'];
 		$sql = "UPDATE vehiculo SET placa='$this->placa',
 						marca=$this->marca,
 						motor='$this->motor',
 						chasis='$this->chasis',
 						combustible='$this->combustible',
 						anio='$this->anio',
-						color=$this->color
+						color=$this->color,
+						foto='$this->foto'
 	WHERE id=$this->id;";
 		if($this->con->query($sql)){
 			echo $this->_message_ok("actualizó");
